@@ -43,3 +43,6 @@ alias gstd='git stash drop'
 alias gstl='git stash list'
 alias gstp='git stash pop'
 alias gsts='git stash save'
+
+# define k9s path
+export XDG_CONFIG_HOME="$HOME/.config"
