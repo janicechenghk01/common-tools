@@ -97,22 +97,34 @@ class TestHash(object):
 class TestPinItemSet(object):    
     def __init__(self):
         self.r = get_connection()
+        self.hash_key = 'pinItems'
         
     def test_hset(self):
         pinItemsDict = {
-            '1': "['123456','456789']",
-            '2': "['123456','456789']",
-            '3': "['123456','456789']"
+            '1': '["833756", "832878"]',
+            '3': '["832732", "833032"]',
+            '5': '["832420", "833801"]',
+            '7': '["831886", "833692"]',
+            '9': '["832417", "832986"]'
         }
         for pinPos in pinItemsDict:
             pinItemsArray = pinItemsDict.get(pinPos)
-            self.r.hset('pinItems', pinPos, pinItemsArray)
+            self.r.hset(self.hash_key, pinPos, pinItemsArray)
 
     def test_hgetall(self):
-        res = self.r.hgetall('pinItems')
+        res = self.r.hgetall(self.hash_key)
         return {i.decode(): eval(res.get(i).decode()) for i in res}
 
-    def test_hexists(self):
-        res = self.r.hexists('pinItems','1')
-        print(res)
+    def test_hexists(self, idx='1'):
+        res = self.r.hexists(self.hash_key, idx)
+        return res
+        
+    def test_hdel(self, delete_all=False, idx='1'):
+        if delete_all:
+            for k in self.test_hgetall():
+                self.r.hdel(self.hash_key, k)
+            print(f'Deleted All {self.hash_key} Done!')
+        else:
+            res = self.r.hdel(self.hash_key, idx)
+            print(f'Delete {self.hash_key} with key={idx} Done!')
 
