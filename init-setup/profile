@@ -44,5 +44,8 @@ alias gstl='git stash list'
 alias gstp='git stash pop'
 alias gsts='git stash save'
 
+# define path to project directory
+alias airflow='cd $HOME/Work/data-airflow-dags/'
+
 # define k9s path
-export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CONFIG_HOME='$HOME/.config'
