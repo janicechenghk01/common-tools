@@ -5,19 +5,19 @@ redis_port = 6379
 
 
 def get_connection():
-	conn = redis.StrictRedis(host=redis_host, port=redis_port, db=0)
-	return conn
+    conn = redis.StrictRedis(host=redis_host, port=redis_port, db=0)
+    return conn
 
 
 class TestString(object):
-	def __init__(self):
+    def __init__(self):
         self.r = get_connection()
 
     def test_set(self):
         res = self.r.set('user1','juran-1')
         print(res)
 
-	def test_get(self):
+    def test_get(self):
         res = self.r.get('user1')
         print(res)
 
@@ -33,7 +33,7 @@ class TestString(object):
         res = self.r.mget(l)
         print(res)
 
-	def test_del(self):
+    def test_del(self):
         self.r.delete('user2')
 
 
@@ -77,7 +77,7 @@ class TestSet(object):
 class TestHash(object):
     def __init__(self):
         self.r = get_connection()
-	
+    
     def test_hset(self):
         dic = {
             'id':1,
