@@ -6,8 +6,6 @@ alias dims='docker images'
 
 # commond
 alias :c='clear'
-alias :vz='vim $HOME/.zshrc'
-alias :sz='source $HOME/.zshrc'
 
 # homebrew updates
 alias brewski='brew update && brew upgrade && brew cleanup; brew doctor'
@@ -18,5 +16,13 @@ alias gs='git status'
 # define path to project directory
 alias airflow='cd $HOME/Work/data-airflow-dags/'
 
-# define k9s path
-export XDG_CONFIG_HOME='$HOME/.config'
+# file
+alias getfeed="python3 /Users/janicecheng/Work/data-tools/getfeedv4/get_feed_v4.py"
+alias hello-hk01="python3 /Users/janicecheng/Work/data-tools/getlink/getlink.py"
+alias getnotes="vim ~/Work/.notes"
+alias sqlworkbenchj='java -jar /Applications/SQLWorkbenchJ.app/Contents/Java/sqlworkbench.jar'
+alias jl='jupyter-lab'
+
+# path
+export JAVA_HOME=$(/usr/libexec/java_home)
+
