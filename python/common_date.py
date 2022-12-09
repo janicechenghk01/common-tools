@@ -23,3 +23,10 @@ def get_previous_n_day(n=2):
     now = datetime.now()
     future_day = now - timedelta(days=n)
     return future_day.strftime(fmt)
+
+
+def get_time_diff(start, end):
+    c_start = datetime.fromtimestamp(round(start / 1000))
+    c_end = datetime.fromtimestamp(round(end / 1000))
+    seconds = (c_end - c_start).total_seconds()
+    return seconds 
