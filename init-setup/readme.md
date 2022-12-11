@@ -11,6 +11,7 @@ Install the following tools with homebrew
 - kubens: `brew install kubens`
 - k9s: `brew install derailed/k9s/k9s`
 - git: `brew install git`
+- sqlworkbenchj: `brew install --cask sqlworkbenchj`
 
 
 ## k9s
