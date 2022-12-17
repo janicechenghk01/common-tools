@@ -8,8 +8,6 @@ alias ddown='docker compose down'
 
 # commond
 alias :c='clear'
-alias :vz='vim $HOME/.zshrc'
-alias :sz='source $HOME/.zshrc'
 
 # homebrew updates
 alias brewski='brew update && brew upgrade && brew cleanup; brew doctor'
@@ -21,7 +19,10 @@ alias gcod='git checkout development'
 alias gcos='git checkout staging'
 
 # define path to project directory
-alias airflow='cd $HOME/Work/data-airflow-dags/'
+alias repo-airflow='cd $HOME/Work/data-airflow-dags/'
+alias repo-data-tools='cd $HOME/Work/data-tools/'
+alias repo-collective='cd $HOME/Work/data-collective-recommend/'
+alias repo-k8s-chart='cd $HOME/Work/data-k8s-chart/'
 
 # file
 alias getfeed="python3 /Users/janicecheng/Work/data-tools/getfeedv4/get_feed_v4.py"
