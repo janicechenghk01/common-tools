@@ -19,14 +19,23 @@ alias gcod='git checkout development'
 alias gcos='git checkout staging'
 
 # define path to project directory
-alias repo-airflow='cd $HOME/Work/data-airflow-dags/'
-alias repo-data-tools='cd $HOME/Work/data-tools/'
-alias repo-collective='cd $HOME/Work/data-collective-recommend/'
-alias repo-k8s-chart='cd $HOME/Work/data-k8s-chart/'
+alias repo-airflow='cd $WORK/data-airflow-dags/'
+alias repo-data-tools='cd $WORK/data-tools/'
+alias repo-collective='cd $WORK/data-collective-recommend/'
+alias repo-k8s-chart='cd $WORK/data-k8s-chart/'
+
+# k8s context switching
+# kubectl config use-context <context-name>
+alias use-minikube='kubectl config use-context minikube'
 
 # file
-alias getfeed="python3 /Users/janicecheng/Work/data-tools/getfeedv4/get_feed_v4.py"
-alias hello-hk01="python3 /Users/janicecheng/Work/data-tools/getlink/getlink.py"
-alias getnotes="vim ~/Work/.notes"
+alias getfeed="python3 $WORK/data-tools/getfeedv4/get_feed_v4.py"
+alias hello-hk01="python3 $WORK/data-tools/getlink/getlink.py"
+alias getnotes="vim $WORK/.notes"
 alias sqlworkbenchj='java -jar /Applications/SQLWorkbenchJ.app/Contents/Java/sqlworkbench.jar'
 alias jl='jupyter-lab'
+
+# check aws log
+alias athena-log="aws athena get-query-execution --query-execution-id"
+
+export WORK=$HOME/Work
