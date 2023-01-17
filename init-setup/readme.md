@@ -23,3 +23,8 @@ Install the following tools with homebrew
 cd init-setup
 cp ./colors/rose-pine-k9s.yml $XDG_CONFIG_HOME/k9s/skin.yml
 ```
+
+pre-commit
+```bash
+pre-commit run --all-files
+```

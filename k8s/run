@@ -1,0 +1,11 @@
+# start redis docker in local
+docker run -itd --name redis -p 6379:6379 redis
+
+# start postgres docker in local
+docker run --name postgres -e POSTGRES_PASSWORD=passowrd -d postgres
+
+# start mongo docker in local
+docker run -itd --name mongo -p 27017:27017 mongo
+
+# memcached
+docker run -itd --name memcached -p 11211:11211 memcached

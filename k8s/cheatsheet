@@ -1,0 +1,9 @@
+# check context
+kubectx
+kubectl config get-contexts
+
+# change the default namespace of a context
+kubens project-ml-data
+
+# check the pods under certain namespace
+kubectl -n project-ml-data get po

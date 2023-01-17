@@ -6,11 +6,10 @@ alias dims='docker images'
 alias dup='docker compose up -d'
 alias ddown='docker compose down'
 
-# commond
-alias :c='clear'
-
 # homebrew updates
 alias brewski='brew update && brew upgrade && brew cleanup; brew doctor'
+
+export WORK=$HOME/Work
 
 # git shortcut
 alias gs='git status'
@@ -25,7 +24,6 @@ alias repo-collective='cd $WORK/data-collective-recommend/'
 alias repo-k8s-chart='cd $WORK/data-k8s-chart/'
 
 # k8s context switching
-# kubectl config use-context <context-name>
 alias use-minikube='kubectl config use-context minikube'
 
 # file
@@ -38,4 +36,6 @@ alias jl='jupyter-lab'
 # check aws log
 alias athena-log="aws athena get-query-execution --query-execution-id"
 
-export WORK=$HOME/Work
+# ssh connection
+alias ssh-db="ssh jumphost -N -L 5432:localhost:5432"
+

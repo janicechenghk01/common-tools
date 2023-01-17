@@ -1,0 +1,7 @@
+# ~/.ssh/config
+Host jumphost
+    HostName 127.0.0.1
+    User ubuntu
+    IdentityFile ~/.ssh/id_rsa
+    IdentitiesOnly yes
+    StrictHostKeyChecking no

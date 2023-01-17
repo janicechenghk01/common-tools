@@ -21,4 +21,4 @@
 
 # incase you want a different color config
 [includeIf "gitdir:~/Work/"]
-	path = ~/Work/.gitconfig_hk01
+	path = ~/Work/.gitconfig_work
