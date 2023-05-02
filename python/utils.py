@@ -30,3 +30,39 @@ def generate_mock_data(item_list):
         pinItemsDict[str(i)] = json.dumps(arr)
 
     return pinItemsDict
+
+
+def get_feed_from_seldon(
+    url: str = 'localhost',
+    uid: str = '',
+    aid: int = -1,
+    ingress_id: str = '',
+    type: str = 'article'
+) -> dict:
+    """
+    uid = '37241C51-30C0-42E0-B4A7-000676BE99FD'
+    response = get_feed_from_seldon(url, uid)
+    """
+    
+    import requests
+
+    instance = {
+        'uid': uid
+    }
+    if aid != -1:
+        instance['aid'] = aid
+        
+    payload = {
+        'jsonData': {
+            'instances': [instance],
+            'config': {'top_n': 10}
+        }
+    }
+    headers = {'Content-Type': 'application/json'}
+    if ingress_id:
+        headers[REQUEST_ID_HEADER] = ingress_id
+
+    res = {}
+
+    response = requests.post(url, json=payload, headers=headers, timeout=0.5)
+    return response

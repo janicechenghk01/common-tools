@@ -1,6 +1,32 @@
-redis:
-  restart: always
-  container_name: redis
-  image: redis:latest
-  ports:
-    - 6379:6379
+version: '3.4'
+
+services:
+  # redis:
+  #   restart: always
+  #   container_name: redis
+  #   image: redis:latest
+  #   ports:
+  #     - 6379:6379
+
+   redis-db:
+     image: public.ecr.aws/hk01/docker-redis-cluster-mock:7.0.9
+     container_name: redis-cluster-localhost-access
+     environment:
+       IP: "0.0.0.0"
+       INITIAL_PORT: 7000
+       MASTERS: 3
+       SLAVES_PER_MASTER: 1
+     ports:
+     ## INITIAL_PORT ~ (INITIAL_PORT + MASTERS * (1 + SLAVES_PER_MASTER) -1)
+     - "7000-7005:7000-7005"
+
+  # redis-db:
+  #   image: public.ecr.aws/hk01/docker-redis-cluster-mock:7.0.9
+  #   container_name: redis-cluster
+  #   environment:
+  #     INITIAL_PORT: 7000
+  #     MASTERS: 3
+  #     SLAVES_PER_MASTER: 1
+  #   ports:
+  #   ## INITIAL_PORT ~ (INITIAL_PORT + MASTERS * (1 + SLAVES_PER_MASTER) -1)
+  #   - "7000-7005:7000-7005"

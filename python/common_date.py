@@ -30,3 +30,9 @@ def get_time_diff(start, end):
     c_end = datetime.fromtimestamp(round(end / 1000))
     seconds = (c_end - c_start).total_seconds()
     return seconds 
+
+
+def date_generator(numdays=2):
+    base = datetime.today()
+    date_list = [(base - timedelta(days=x)).strftime('%Y-%m-%d') for x in range(numdays)]
+    return date_list

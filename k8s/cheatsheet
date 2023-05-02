@@ -7,3 +7,6 @@ kubens project-ml-data
 
 # check the pods under certain namespace
 kubectl -n project-ml-data get po
+
+# assign k8s context
+aws eks update-kubeconfig --region region-code --name my-cluster
