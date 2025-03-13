@@ -7,6 +7,10 @@ Install the following tools with homebrew
 - iterm2: `brew install iterm2`
 - awscli: `brew install awscli`
 - git: `brew install git`
+- nosql-booster: `brew install --cask nosqlbooster-for-mongodb`
+- dbbeaver: `brew install --cask dbeaver-community`
+- duckdb: `brew install duckdb`
+- sublime: `brew install --cask sublime-text`
 - sqlworkbenchj: `brew install --cask sqlworkbenchj`
 
 ### kubernetes
@@ -21,7 +25,7 @@ Install the following tools with homebrew
 2. Download [skin](https://github.com/derailed/k9s/tree/master/skins) from k9s repo and move to the `$XDG_CONFIG_HOME/k9s/`
 ```bash
 cd init-setup
-cp ./colors/rose-pine-k9s.yml $XDG_CONFIG_HOME/k9s/skin.yml
+cp ./colors/rose-pine-k9s.yml $XDG_CONFIG_HOME/k9s/skins/rose-pine-k9s.yml
 ```
 
 pre-commit
