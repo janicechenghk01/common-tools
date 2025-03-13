@@ -2,3 +2,4 @@
 .fleet/
 .env
 docker/data/*
+.DS_Store
